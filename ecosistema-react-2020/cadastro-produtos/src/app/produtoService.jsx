@@ -57,6 +57,18 @@ export default class ProdutoService {
 
     }
 
+    deletar = (sku) => {
+        const index = this.obterIndex(sku)
+        if (index !== null) {
+            const produtos = this.obterProdutos()
+            // o splice vai deletar apartir do index a quantidade de um elemento
+            produtos.splice(index, 1)
+            localStorage.setItem(PRODUTOS, JSON.stringify(produtos))
+            // abaixo retorna o array de produtos atualizados
+            return produtos
+        }
+    }
+
     salvar = (produto) => {
             this.validar(produto)
 
