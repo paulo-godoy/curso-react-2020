@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Home() {
     return (
@@ -7,7 +8,7 @@ function Home() {
             <p className="lead">Esse é seu sistema, utilize a barra de navegação para acessar as páginas.</p>
             <hr className="my-4" />
             <p className="lead">
-                <a className="btn btn-primary btn-lg" href="#" role="button">Cadastrar</a>
+                <Link className="btn btn-primary btn-lg" to="/cadastro-produto" role="button">Cadastrar</Link>
             </p>
         </div>
     )
